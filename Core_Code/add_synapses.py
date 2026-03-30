@@ -86,9 +86,9 @@ def add_synapses_to_html(html_path, synapse_limit=None, server=None, dataset=Non
     else:
         # Ensure neuPrint client is available
         try:
-            neuprint.default_client()
+            _client = neuprint.default_client()
         except RuntimeError:
-            get_client(server=server, dataset=dataset, token=token)
+            _client = get_client(server=server, dataset=dataset, token=token)
 
         # Extract DATA to get body IDs and norm params
         data_json_str = extract_data_json(html_text)
