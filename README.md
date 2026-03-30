@@ -12,7 +12,7 @@ New to Python? See [README_IF_YOURE_LOST.md](README_IF_YOURE_LOST.md).
 ## Setup
 
 ```bash
-git clone https://github.com/chadosauvola/neuron-visualizer.git
+git clone https://github.com/sauvolac1/neuron-visualizer.git
 cd neuron-visualizer
 pip install -r requirements.txt
 ```

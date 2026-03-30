@@ -82,7 +82,7 @@ If you haven't already, download this code:
 
 **Option A — If you have git:**
 ```bash
-git clone https://github.com/your-username/neuron-visualizer.git
+git clone https://github.com/sauvolac1/neuron-visualizer.git
 cd neuron-visualizer
 ```
 
