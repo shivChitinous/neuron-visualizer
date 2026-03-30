@@ -61,7 +61,7 @@ def has_synapse_data(html_text):
     return False
 
 
-def add_synapses_to_html(html_path, synapse_limit=None):
+def add_synapses_to_html(html_path, synapse_limit=None, server=None, dataset=None, token=None):
     """Fetch synapse data and patch it into an existing HTML."""
     import numpy as np
     import neuprint
@@ -84,11 +84,11 @@ def add_synapses_to_html(html_path, synapse_limit=None):
         print(f"  Using cached synapse data: {cache_path.name}")
         synapse_json_str = cache_path.read_text(encoding='utf-8')
     else:
-        # Ensure neuPrint client is available (may already be set by notebook)
+        # Ensure neuPrint client is available
         try:
             neuprint.default_client()
         except RuntimeError:
-            get_client()
+            get_client(server=server, dataset=dataset, token=token)
 
         # Extract DATA to get body IDs and norm params
         data_json_str = extract_data_json(html_text)
